@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/01"
+        elementFormDefault="qualified">
+    <element name="user">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"/>
+                <element name="username" type="string"/>
+                <element name="born" type="date"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
+<!--
+     XSD是指XML结构定义 ( XML Schemas Definition )
+     XML Schema 是DTD的替代品。XML Schema语言也就是XSD。
+
+    XML Schema的优点:
+    1) XML Schema基于XML,没有专门的语法 。
+    2) XML可以象其他XML文件一样解析和处理 。
+    3) XML Schema支持一系列的数据类型(int、float、Boolean、date等) 。
+    4) XML Schema提供可扩充的数据模型。
+    5) XML Schema支持综合命名空间 。
+    6) XML Schema支持属性组。
+-->
