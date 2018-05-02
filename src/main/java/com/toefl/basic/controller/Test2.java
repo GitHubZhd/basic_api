@@ -10,6 +10,7 @@ public class Test2 {
         if(file.isDirectory()){
             System.out.println("directory");
             System.out.println("------");
+            System.out.println("------");
             return;
         }else {
             System.out.println(file.getParent());
