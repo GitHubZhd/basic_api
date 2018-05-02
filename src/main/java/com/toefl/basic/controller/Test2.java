@@ -9,7 +9,6 @@ public class Test2 {
         File file=new File("D:\\老托74-93加时间.xlsx");
         if(file.isDirectory()){
             System.out.println("directory");
-            System.out.println("------");
             return;
         }else {
             System.out.println(file.getParent());
