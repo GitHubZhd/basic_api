@@ -10,7 +10,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 /**
- * 微信access_token 获取、获取jsapiTicket
+ * 微信access_token 获取、获取jsapiTicket 
  * @author hai
  */
 public class JsapiTicketUtil {
