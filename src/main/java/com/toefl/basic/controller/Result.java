@@ -1,7 +1,4 @@
-package com.zhan.common.domain;
-
-import com.zhan.common.common.ResponseCode;
-import com.zhan.common.util.DateUtils;
+package com.toefl.basic.controller;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -32,7 +29,6 @@ public class Result implements Serializable {
     public void addOK(Object message) {
         this.status = Status.OK;
         this.message = message;
-        this.nowTime = DateUtils.getNowDate();
     }
 
     public Status getStatus() {
@@ -67,40 +63,11 @@ public class Result implements Serializable {
     public void addError(Object message) {
         this.status = Status.ERROR;
         this.message = message;
-        this.nowTime = DateUtils.getNowDateLong();
-    }
-
-    public void addError(ResponseCode responseCode) {
-        Map<String,Object> data=new HashMap<>();
-        data.put("code",responseCode.getCode());
-        data.put("info",responseCode.getMsg());
-        this.status = Status.ERROR;
-        this.message = data;
-        this.nowTime = DateUtils.getNowDateLong();
-    }
-
-    public void addError(ResponseCode responseCode,String message) {
-        Map<String,Object> data=new HashMap<>();
-        data.put("code",responseCode.getCode());
-        data.put("info",message);
-        this.status = Status.ERROR;
-        this.message = data;
-        this.nowTime = DateUtils.getNowDateLong();
-    }
-
-    public void addSuccess(ResponseCode responseCode, Object obj) {
-        Map<String,Object> data=new HashMap<>();
-        data.put("code",responseCode.getCode());
-        data.put("info",obj);
-        this.status = Status.OK;
-        this.message = data;
-        this.nowTime = DateUtils.getNowDateLong();
     }
 
     public Result(Status status, Object message) {
         this.status = status;
         this.message = message;
-        this.nowTime = DateUtils.getNowDateLong();
     }
 
     public Result(Long total, List data) {
@@ -113,7 +80,6 @@ public class Result implements Serializable {
         datasMap.put("total", total);
         datasMap.put("data", datas);
         this.message = datasMap;
-        this.nowTime = DateUtils.getNowDateLong();
     }
     /**
      * @fields record 消息对象

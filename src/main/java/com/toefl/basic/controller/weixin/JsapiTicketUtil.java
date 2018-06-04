@@ -9,6 +9,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * @author hai
+ */
 public class JsapiTicketUtil {
 
     /***
@@ -38,11 +41,13 @@ public class JsapiTicketUtil {
                 }
                 in.close();
             } catch (IOException e) {
+                e.printStackTrace();
                 return result;
             }
         }
         catch (MalformedURLException e)
         {
+            e.printStackTrace();
             return result;
         }
 
@@ -54,11 +59,14 @@ public class JsapiTicketUtil {
      * @return
      */
     public static String getAccessToken(){
-        String appid="你公众号基本设置里的应用id";//应用ID
-        String appSecret="你公众号基本设置里的应用密钥";//(应用密钥)
+        //应用ID-----你公众号基本设置里的应用id
+        String appid="wx55095301b91743da";
+        //(应用密钥)-----你公众号基本设置里的应用密钥
+        String appSecret="67eb2cc82eb2ef1f92a7a633f6552048";
         String url ="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+appid+"&secret="+appSecret+"";
         String backData=sendGet(url, "utf-8", 10000);
         String accessToken = (String) JSONObject.fromObject(backData).get("access_token");
+        System.out.println(accessToken);
         return accessToken;
     }
     /***

@@ -1,4 +1,4 @@
-package com.zhan.common.util;
+package com.toefl.basic.utils;
 
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
