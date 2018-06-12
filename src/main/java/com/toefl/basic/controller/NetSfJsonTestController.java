@@ -61,4 +61,23 @@ public class NetSfJsonTestController {
             return new Result(Result.Status.ERROR,"error");
         }
     }
+
+    /**
+     * test
+     * @return
+     */
+    @RequestMapping(value = "/zhanTuan/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String activity() {
+        try {
+            String requestUrl="http://localhost:8066/zhanTuan/list";
+            String result=NetUtil.doGet(requestUrl);
+            System.out.println(result);
+            JSONObject jsonObject = JSONObject.fromObject(result);
+            String json = "{\"Code\": 0, \"Message\": \"\", \"Data\":"+jsonObject.getJSONObject("Data").toString()+" }";
+            return json;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 }
