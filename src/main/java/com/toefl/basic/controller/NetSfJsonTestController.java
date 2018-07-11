@@ -1,7 +1,6 @@
 package com.toefl.basic.controller;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 import com.toefl.basic.utils.NetUtil;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
@@ -54,8 +53,12 @@ public class NetSfJsonTestController {
 
             String requestUrl="https://uatermapi.tpooo.net/PublicClass/GetActivityDetails?activityId=12714";
             String result=NetUtil.doGet(requestUrl);
-            JSONObject jsonObject = JSONObject.fromObject(result,cfg);
-            return new Result(Result.Status.OK,jsonObject);
+            Gson gson = new Gson();
+            JsonObject jsonObjectV = new JsonParser().parse(result).getAsJsonObject();
+//            jsonObjectV.
+//
+//            JSONObject jsonObject = JSONObject.fromObject(result,cfg);
+            return new Result(Result.Status.OK,jsonObjectV);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(Result.Status.ERROR,"error");
