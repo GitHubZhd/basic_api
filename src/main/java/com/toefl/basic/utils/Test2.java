@@ -8,6 +8,6 @@ package com.toefl.basic.utils;
 public class Test2 {
 
     public static void main(String[] args) {
-        System.out.println("test cherry-pick 1");
+        System.out.println("test cherry-pick 2.0");
     }
 }
