@@ -61,9 +61,9 @@ public class JsapiTicketUtil {
      */
     public static String getAccessToken(){
         //应用ID-----你公众号基本设置里的应用id
-        String appid="wx55095301b91743da";
+        String appid="wx4ffb746b0f5f79ec";
         //(应用密钥)-----你公众号基本设置里的应用密钥
-        String appSecret="67eb2cc82eb2ef1f92a7a633f6552048";
+        String appSecret="4fdc47cbf81fa52719da9a2ac9a22ea4";
         String url ="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+appid+"&secret="+appSecret+"";
         String backData=sendGet(url, "utf-8", 10000);
         String accessToken = (String) JSONObject.fromObject(backData).get("access_token");
